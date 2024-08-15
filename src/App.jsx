@@ -1,7 +1,11 @@
+import Body from "./Components/Body";
+
 function App() {
   return (
     <>
-      <div>Hello</div>
+      <div className="bg-[#0f0f0f]">
+        <Body />
+      </div>
     </>
   );
 }
