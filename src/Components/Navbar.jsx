@@ -2,23 +2,32 @@ import { RxHamburgerMenu } from "react-icons/rx";
 import ytLogo from "../Assets/yt-logo-dark.png";
 import { FiSearch } from "react-icons/fi";
 import { FaRegUserCircle } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { addClick } from "../Utils/appSlice";
 
 const Navbar = () => {
+  const dispatch = useDispatch();
+  const handleClick = () => {
+    dispatch(addClick());
+  };
   return (
-    <div className="sticky top-0 flex  items-center justify-between mx-8">
+    <div className="select-none sticky top-0 flex bg-[#0f0f0f] items-center justify-between mx-8">
       <div className="flex items-center p-2 ">
-        <div className="cursor-pointer hover:bg-gray-600 hover:rounded-full ">
-          <RxHamburgerMenu className="text-white text-xl" />
+        <div className="cursor-pointer">
+          <RxHamburgerMenu
+            className="text-white text-xl"
+            onClick={handleClick}
+          />
         </div>
-        <img src={ytLogo} alt="logo" className="w-28 ml-5" />
+        <img src={ytLogo} alt="logo" className="w-28 ml-5 cursor-pointer" />
       </div>
       <div className="flex items-center">
         <input
           type="text"
           placeholder="Search"
-          className="p-1 pl-4 rounded-l-full w-[35rem]  bg-[#0f0f0f] border-[#444444] border-[0.5px]"
+          className="p-1 pl-4 rounded-l-full w-[35rem] text-white bg-[#0f0f0f] border-[#444444] border-[0.5px]"
         />
-        <div className="bg-[#222222] p-[7px] px-6 rounded-r-full">
+        <div className="bg-[#222222] p-[7px] px-6 rounded-r-full cursor-pointer">
           <FiSearch className="text-white text-xl " />
         </div>
       </div>
