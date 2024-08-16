@@ -4,16 +4,19 @@ import { MdSubscriptions } from "react-icons/md";
 import { SiYoutubeshorts } from "react-icons/si";
 import { TbBrandYoutube } from "react-icons/tb";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const SideBar = () => {
   const showSidebar = useSelector((store) => store.app.click);
 
   return showSidebar ? (
     <div className="fixed left-0 mt-16 min-h-screen w-56 flex-shrink-0 bg-[#0f0f0f] z-50">
-      <div className="flex items-center">
-        <IoMdHome className="text-white text-2xl ml-6" />
-        <p className="text-white text-sm ml-5">Home</p>
-      </div>
+      <Link to="/">
+        <div className="flex items-center">
+          <IoMdHome className="text-white text-2xl ml-6" />
+          <p className="text-white text-sm ml-5">Home</p>
+        </div>
+      </Link>
       <div className="flex items-center">
         <SiYoutubeshorts className="text-white text-2xl ml-6 my-5" />
         <p className="text-white text-sm ml-5">Shorts</p>

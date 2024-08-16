@@ -1,13 +1,34 @@
-import Body from "./Components/Body";
 import { Provider } from "react-redux";
 import store from "./Utils/store";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import MainContainer from "./Components/MainContainer";
+import VideoAndTagsContainer from "./Components/VideoAndTagsContainer";
+import WatchPage from "./Components/WatchPage";
 
 function App() {
+  const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <MainContainer />,
+      children: [
+        {
+          path: "/",
+          element: <VideoAndTagsContainer />,
+        },
+        {
+          path: "/watch",
+          element: <WatchPage />,
+        },
+      ],
+    },
+  ]);
   return (
     <>
-      <div className="bg-[#0f0f0f] min-h-screen">
+      <div>
         <Provider store={store}>
-          <Body />
+          <Navbar />
+          <RouterProvider router={appRouter} />
         </Provider>
       </div>
     </>
