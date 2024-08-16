@@ -11,8 +11,8 @@ const Navbar = () => {
     dispatch(addClick());
   };
   return (
-    <div className="select-none sticky top-0 flex bg-[#0f0f0f] items-center justify-between mx-8">
-      <div className="flex items-center p-2 ">
+    <div className="select-none fixed w-screen top-0 flex bg-[#0f0f0f] items-center justify-between px-8">
+      <div className="flex items-center p-2">
         <div className="cursor-pointer">
           <RxHamburgerMenu
             className="text-white text-xl"

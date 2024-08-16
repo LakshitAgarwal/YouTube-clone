@@ -1,4 +1,4 @@
-import { FaHistory } from "react-icons/fa";
+import { FaHistory, FaRegUserCircle } from "react-icons/fa";
 import { IoMdHome } from "react-icons/io";
 import { MdSubscriptions } from "react-icons/md";
 import { SiYoutubeshorts } from "react-icons/si";
@@ -9,32 +9,42 @@ const SideBar = () => {
   const showSidebar = useSelector((store) => store.app.click);
 
   return showSidebar ? (
-    <div className="mt-4 min-h-screen w-56 flex-shrink-0">
+    <div className="fixed left-0 mt-16 min-h-screen w-56 flex-shrink-0 bg-[#0f0f0f] z-50">
       <div className="flex items-center">
-        <IoMdHome className="text-white text-2xl ml-10" />
-        <p className="text-white text-sm ml-6">Home</p>
+        <IoMdHome className="text-white text-2xl ml-6" />
+        <p className="text-white text-sm ml-5">Home</p>
       </div>
       <div className="flex items-center">
-        <SiYoutubeshorts className="text-white text-2xl ml-10 my-5" />
-        <p className="text-white text-sm ml-6">Shorts</p>
+        <SiYoutubeshorts className="text-white text-2xl ml-6 my-5" />
+        <p className="text-white text-sm ml-5">Shorts</p>
       </div>
       <div className="flex items-center ">
-        <MdSubscriptions className="text-white text-2xl ml-10" />
-        <p className="text-white text-sm ml-6">Subscriptions</p>
+        <MdSubscriptions className="text-white text-2xl ml-6" />
+        <p className="text-white text-sm ml-5">Subscriptions</p>
       </div>
       <hr className="border-gray-700 my-4" />
       <div className="flex items-center">
-        <TbBrandYoutube className="text-white text-2xl ml-10" />
-        <p className="text-white text-sm ml-6">You</p>
+        <TbBrandYoutube className="text-white text-2xl ml-6" />
+        <p className="text-white text-sm ml-5">You</p>
       </div>
       <div className="flex items-center my-5">
-        <FaHistory className="text-white text-2xl ml-10 " />
-        <p className="text-white text-sm ml-6">History</p>
+        <FaHistory className="text-white text-2xl ml-6 " />
+        <p className="text-white text-sm ml-5">History</p>
+      </div>
+      <hr className="border-gray-700 my-4" />
+      <div className="my-5">
+        <p className="text-white text-sm ml-6">
+          Sign in to like videos, comment and subscribe.
+        </p>
+        <div className="flex w-fit item-center border-[1px] border-[#3f3f3f] rounded-full py-[6px] px-3 hover:bg-blue-600 hover:bg-opacity-30 cursor-pointer ml-6 my-3">
+          <FaRegUserCircle className="text-blue-600 text-xl" />
+          <p className="text-blue-600 text-sm ml-2">Sign In</p>
+        </div>
       </div>
       <hr className="border-gray-700 my-4" />
     </div>
   ) : (
-    <div className="mt-4 min-h-screen w-fit flex-shrink-0">
+    <div className="fixed left-0 mt-16 min-h-screen w-fit flex-shrink-0 bg-[#0f0f0f] z-50">
       <div className="">
         <IoMdHome className="text-white text-2xl ml-10" />
         <p className="text-white text-xs text-center ml-3 pt-1">Home</p>
