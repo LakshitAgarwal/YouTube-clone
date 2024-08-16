@@ -7,7 +7,7 @@ const MainContainer = () => {
   return (
     <div className="flex">
       <SideBar />
-      <div className="ml-10 mt-4">
+      <div className="flex-grow ml-6 mt-4 transition-all duration-300">
         <ButtonTags />
         <VideoCatelouge />
       </div>

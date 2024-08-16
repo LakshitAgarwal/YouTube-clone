@@ -9,7 +9,7 @@ const SideBar = () => {
   const showSidebar = useSelector((store) => store.app.click);
 
   return showSidebar ? (
-    <div className="mt-4 min-h-screen w-56">
+    <div className="mt-4 min-h-screen w-56 flex-shrink-0">
       <div className="flex items-center">
         <IoMdHome className="text-white text-2xl ml-10" />
         <p className="text-white text-sm ml-6">Home</p>
@@ -34,10 +34,10 @@ const SideBar = () => {
       <hr className="border-gray-700 my-4" />
     </div>
   ) : (
-    <div className="mt-4 min-h-screen w-fit">
+    <div className="mt-4 min-h-screen w-fit flex-shrink-0">
       <div className="">
         <IoMdHome className="text-white text-2xl ml-10" />
-        <p className="text-white text-xs text-center ml-4 pt-1">Home</p>
+        <p className="text-white text-xs text-center ml-3 pt-1">Home</p>
       </div>
       <div className="">
         <SiYoutubeshorts className="text-white text-2xl ml-10 mt-7" />
@@ -45,11 +45,13 @@ const SideBar = () => {
       </div>
       <div className=" ">
         <MdSubscriptions className="text-white text-2xl ml-10 mt-7" />
-        <p className="text-white text-xs text-center ml-4 pt-1">Subscriptions</p>
+        <p className="text-white text-xs text-center ml-4 pt-1">
+          Subscriptions
+        </p>
       </div>
       <div className="">
         <TbBrandYoutube className="text-white text-2xl ml-10 mt-7" />
-        <p className="text-white text-xs text-center ml-4 pt-1">You</p>
+        <p className="text-white text-xs text-center ml-3 pt-1">You</p>
       </div>
       <div className=" my-5">
         <FaHistory className="text-white text-2xl ml-10 mt-7" />
