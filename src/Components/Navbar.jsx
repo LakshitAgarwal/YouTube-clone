@@ -19,7 +19,9 @@ const Navbar = () => {
             onClick={handleClick}
           />
         </div>
-        <img src={ytLogo} alt="logo" className="w-28 ml-5 cursor-pointer" />
+        <a href="/">
+          <img src={ytLogo} alt="logo" className="w-28 ml-5 cursor-pointer" />
+        </a>
       </div>
       <div className="flex items-center">
         <input

@@ -4,13 +4,21 @@ const appSlice = createSlice({
   name: "app",
   initialState: {
     click: true,
+    isVideoPlaying: false,
   },
   reducers: {
-    addClick: (state, action) => {
+    addClick: (state) => {
       state.click = !state.click;
     },
+    setClickFalse: (state) => {
+      state.click = false;
+    },
+  },
+  setIsVideoPlayingTrue: (state) => {
+    state.isVideoPlaying = true;
   },
 });
 
-export const { addClick } = appSlice.actions;
+export const { addClick, setClickFalse, setIsVideoPlayingTrue } =
+  appSlice.actions;
 export default appSlice.reducer;

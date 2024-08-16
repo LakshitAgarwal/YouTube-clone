@@ -3,15 +3,20 @@ import { IoMdHome } from "react-icons/io";
 import { MdSubscriptions } from "react-icons/md";
 import { SiYoutubeshorts } from "react-icons/si";
 import { TbBrandYoutube } from "react-icons/tb";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { removeData } from "../Utils/VideoDataSlice";
 
 const SideBar = () => {
+  const dispatch = useDispatch();
   const showSidebar = useSelector((store) => store.app.click);
 
+  const emptyVideoSlice = () => {
+    dispatch(removeData());
+  };
   return showSidebar ? (
-    <div className="fixed left-0 mt-16 min-h-screen w-56 flex-shrink-0 bg-[#0f0f0f] z-50">
-      <Link to="/">
+    <div className="fixed left-0 mt-[3.3rem] pt-3 min-h-screen w-56 flex-shrink-0 bg-[#0f0f0f] z-50">
+      <Link to="/" onClick={emptyVideoSlice}>
         <div className="flex items-center">
           <IoMdHome className="text-white text-2xl ml-6" />
           <p className="text-white text-sm ml-5">Home</p>
@@ -47,22 +52,24 @@ const SideBar = () => {
       <hr className="border-gray-700 my-4" />
     </div>
   ) : (
-    <div className="fixed left-0 mt-16 min-h-screen w-fit flex-shrink-0 bg-[#0f0f0f] z-50">
-      <div className="">
-        <IoMdHome className="text-white text-2xl ml-10" />
-        <p className="text-white text-xs text-center ml-3 pt-1">Home</p>
-      </div>
-      <div className="">
+    <div className="fixed left-0 mt-[3.3rem] pt-3 min-h-screen w-fit flex-shrink-0 bg-[#0f0f0f] z-50">
+      <Link to="/" onClick={emptyVideoSlice}>
+        <div>
+          <IoMdHome className="text-white text-2xl ml-10" />
+          <p className="text-white text-xs text-center ml-3 pt-1">Home</p>
+        </div>
+      </Link>
+      <div>
         <SiYoutubeshorts className="text-white text-2xl ml-10 mt-7" />
         <p className="text-white text-xs text-center ml-3 pt-1">Shorts</p>
       </div>
-      <div className=" ">
+      <div>
         <MdSubscriptions className="text-white text-2xl ml-10 mt-7" />
         <p className="text-white text-xs text-center ml-4 pt-1">
           Subscriptions
         </p>
       </div>
-      <div className="">
+      <div>
         <TbBrandYoutube className="text-white text-2xl ml-10 mt-7" />
         <p className="text-white text-xs text-center ml-3 pt-1">You</p>
       </div>
