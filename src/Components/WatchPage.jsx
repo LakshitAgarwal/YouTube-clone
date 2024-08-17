@@ -1,4 +1,3 @@
-import React from "react";
 import { useSelector } from "react-redux";
 
 const WatchPage = () => {
@@ -9,7 +8,7 @@ const WatchPage = () => {
   return (
     <div>
       <div>
-        <iframe className="ml-28 mt-12"
+        <iframe className="ml-28 mt-16 rounded-2xl"
           width="880"
           height="560"
           src={"https://www.youtube.com/embed/" + vidId + "?autoplay=1"}
